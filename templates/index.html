@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Welcome to WelcomeHome</h1>
+<p>{% if session.get('username') %}Hello, {{ session['username'] }}!{% else %}Please log in to use the application.{% endif %}</p>
+{% endblock %}
+

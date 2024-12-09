@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Find Item</h1>
+<form method="post">
+    <label for="itemID">Item ID</label>
+    <input type="text" name="itemID" id="itemID" required>
+    <button type="submit">Find Item</button>
+</form>
+
+{% if pieces %}
+    <h2>Item Locations</h2>
+    <ul>
+        {% for piece in pieces %}
+            <li>Piece {{ piece['pieceNum'] }}: Room {{ piece['roomNum'] }}, Shelf {{ piece['shelfNum'] }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}
+
